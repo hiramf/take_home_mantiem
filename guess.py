@@ -9,7 +9,6 @@ class GameSession:
     game_id: str
     attempts: int = 0
     answer: str = WORD_OF_THE_DAY
-    solved = False
 
 
 class Game:
@@ -40,9 +39,3 @@ class Game:
             "guess_result": guess_result,
             "incorrectly_guessed_letters": incorrectly_guessed_letters
         } | letters
-    
-    def __dict__(self):
-        return {
-            "game_id": self.game_id,
-            "attempts:": self.attempts,
-        }

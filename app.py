@@ -5,8 +5,6 @@ from uuid import uuid4
 from guess import Game, GameSession
 
 
-
-
 def create_app():
 
     app = Flask("WordleClone")
@@ -35,8 +33,6 @@ def create_app():
         game = Game(session=game_session)
         result = game.process_guess(request.json["word"].upper())
         return result
-
-
 
     return app
 
