@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from pydantic import BaseModel
 
 
 WORD_OF_THE_DAY = "CROWN"
@@ -13,19 +12,13 @@ class GameSession:
     solved = False
 
 
-class GuessResult(BaseModel):
-    game_id: str
-    incorrectly_guessed_letters: list
-    results: dict
-
-
 class Game:
     def __init__(self, session: dict):
         self.game_id: str = session["game_id"]
         self.session: dict = session
         self.answer: str = session["answer"]
 
-    def process_guess(self, guess: str) -> GuessResult:
+    def process_guess(self, guess: str) -> dict:
         # assumes len(guess) == len(answer)
         incorrectly_guessed_letters = []
         guess_result = "correct"

@@ -1,8 +1,6 @@
-from dataclasses import dataclass
 from flask import Flask, session, request
 import secrets
 from uuid import uuid4
-from pydantic import BaseModel
 
 from guess import Game, GameSession
 
